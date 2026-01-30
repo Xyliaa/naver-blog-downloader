@@ -1,0 +1,25 @@
+# Downloaded images (numbered folders and named folders)
+[0-9]*/
+200709*/
+210225*/
+28040826/
+28798970/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+.venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Claude Code
+.claude/
