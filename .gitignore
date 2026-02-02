@@ -5,6 +5,13 @@
 28040826/
 28798970/
 
+# Multi-site downloader folders (Weverse, Berriz, sbskpop, SBS)
+*_[0-9]*/
+i-dle_*/
+lesserafim_*/
+jisoo/
+unknown/
+
 # Python
 __pycache__/
 *.py[cod]

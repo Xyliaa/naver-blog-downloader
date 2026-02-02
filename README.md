@@ -1,35 +1,43 @@
-# naver-post-downloader
+# Image Downloader
 
-Python3 script to download full-resolution pictures from Naver Blog and Naver Post.
+Python3 script to download full-resolution pictures from multiple sites.
 
-### Supported URL Formats
+### Supported Sites
 
-- `https://blog.naver.com/{blogId}/{logNo}` (new format)
-- `https://blog.naver.com/PostView.naver?blogId=XXX&logNo=XXX`
-- `https://post.naver.com/viewer/postView.nhn?volumeNo=XXX` (legacy)
+| Site | URL Format |
+|------|------------|
+| Naver Blog | `https://blog.naver.com/{blogId}/{logNo}` |
+| Naver Blog | `https://blog.naver.com/PostView.naver?blogId=XXX&logNo=XXX` |
+| Naver Post | `https://post.naver.com/viewer/postView.nhn?volumeNo=XXX` (legacy) |
+| SBS K-Pop | `https://sbskpop.kr/{artist}` |
+| SBS Program | `https://programs.sbs.co.kr/.../visualboard/...?board_no=XXX` |
+| Weverse | `https://weverse.io/{artist}/media/{post_id}` |
+| Berriz | `https://berriz.in/{lang}/{artist}/media/content/{post_id}` |
 
 ### Requirements
 
 - Python 3.7+
-- requests-html
-- lxml_html_clean
+- requests
+- beautifulsoup4
+- selenium (optional, for JS-rendered pages)
+- webdriver-manager (optional, for auto Chrome driver)
 
 ### Installation
 
 ```bash
-pip install requests-html lxml_html_clean
+pip install requests beautifulsoup4 selenium webdriver-manager
 ```
 
 ### How to use
 
 1. Run the script:
    ```bash
-   python naver_post_downloader.py
+   python image_downloader.py
    ```
 
 2. Paste the URL when prompted:
    ```
-   Enter post URL: https://blog.naver.com/jypentertainment/224072207277
+   Enter URL: https://blog.naver.com/jypentertainment/224072207277
    ```
 
 3. Images will be downloaded to a folder named after the post ID in the current directory.
@@ -37,6 +45,7 @@ pip install requests-html lxml_html_clean
 ### Features
 
 - Downloads full-resolution images (converts thumbnails to full size)
-- Supports Naver SmartEditor format
+- Supports multiple sites with automatic detection
 - Preserves original filenames
 - Skips already downloaded files
+- JavaScript rendering support for dynamic pages (Weverse, Berriz, SBS Program)

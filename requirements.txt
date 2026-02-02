@@ -1,2 +1,4 @@
-requests-html
-lxml_html_clean
+requests
+beautifulsoup4
+selenium
+webdriver-manager
